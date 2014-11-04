@@ -10,5 +10,9 @@
     <string name="GraficarNormal">Grificar Curva Normal</string>
     <string name="RegresionLineal">Regresion Lineal</string>
     <string name="GraficarTabla">Graficar Tabla</string>
+    <string name="title_activity_graficar">Graficar</string>
+    <string name="medi">media</string>
+    <string name="desviacion">desviacion</string>
+    <string name="aceptar">Aceptar</string>
 
 </resources>
