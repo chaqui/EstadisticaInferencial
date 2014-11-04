@@ -4,5 +4,11 @@
     <string name="app_name">EstadisticaInferencial</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
+    <string name="bienvenida">Bienvenidos a la aplicacion para estadistica Inferencial Porfavor use uno de los siguientes submenus</string>
+    <string name="Probabilidad">Probabilidad y Estadistica</string>
+    <string name="Inferencial">Estadistica Inferencial</string>
+    <string name="GraficarNormal">Grificar Curva Normal</string>
+    <string name="RegresionLineal">Regresion Lineal</string>
+    <string name="GraficarTabla">Graficar Tabla</string>
 
 </resources>
