@@ -26,6 +26,42 @@
             android:name="com.chaqui.estadisticainferencial.Graficar"
             android:label="@string/title_activity_graficar" >
         </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.EstadisticaMenu"
+            android:label="@string/title_activity_estadistica_menu" >
+        </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.GraficaNormal"
+            android:label="@string/title_activity_grafica_normal" >
+        </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.MenuEstadisticaBasica"
+            android:label="@string/title_activity_menu_estadistica_basica" >
+        </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.Binomial"
+            android:label="@string/title_activity_binomial" >
+        </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.Hipergeometrica"
+            android:label="@string/title_activity_hipergeometrica" >
+        </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.BinomialNegativa"
+            android:label="@string/title_activity_binomial_negativa" >
+        </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.Geometrica"
+            android:label="@string/title_activity_geometrica" >
+        </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.Poisson"
+            android:label="@string/title_activity_poisson" >
+        </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.Lineal"
+            android:label="@string/title_activity_lineal" >
+        </activity>
     </application>
 
 </manifest>
