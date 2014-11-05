@@ -62,6 +62,14 @@
             android:name="com.chaqui.estadisticainferencial.Lineal"
             android:label="@string/title_activity_lineal" >
         </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.Normal"
+            android:label="@string/title_activity_normal" >
+        </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.ErrorEstadndar"
+            android:label="@string/title_activity_error_estadndar" >
+        </activity>
     </application>
 
 </manifest>

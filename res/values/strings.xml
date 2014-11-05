@@ -17,7 +17,7 @@
     <string name="funEst">Todas las funciones de probabilidad y estadistica</string>
     <string name="title_activity_grafica_normal">GraficaNormal</string>
     <string name="title_activity_menu_estadistica_basica">MenuEstadisticaBasica</string>
- <string name="Lineal">Distribucion Lineal</string>
+    <string name="Lineal">Distribucion Lineal</string>
     <string name="Binomial">Distribución Binomial</string>
     <string name="Multinomial">Distribución Multinomial</string>
     <string name="Hipergeometrica ">Distribución Hipergeometrica</string>
@@ -32,6 +32,7 @@
     <string name="n">n:</string>
     <string name="N">N:</string>
     <string name="k">k:</string>
+    <string name="resultado"></string>
     <string name="vacio">resultado:</string>
     <string name="aceptar">aceptar</string>
     <string name="title_activity_hipergeometrica">Hipergeometrica</string>
@@ -40,4 +41,7 @@
     <string name="title_activity_poisson">Poisson</string>
     <string name="ocurrencia">ocurrencia:</string>
     <string name="title_activity_lineal">Lineal</string>
+    <string name="title_activity_normal">Normal</string>
+    <string name="title_activity_error_estadndar">ErrorEstadndar</string>
+
 </resources>
