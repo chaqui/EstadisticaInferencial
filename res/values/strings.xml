@@ -10,14 +10,22 @@
     <string name="GraficarNormal">Graficar Curva Normal</string>
     <string name="RegresionLineal">Regresion Lineal</string>
     <string name="GraficarTabla">Graficar Tabla</string>
+    <string name="estimeacionMedia">Estimacion de la Media </string>
     <string name="title_activity_graficar">Graficar</string>
     <string name="medi">media</string>
+    <string name="mediaMuestral">media muestrales</string>
+    <string name="muestra">muestra</string>
+    <string name="poblacion">poblacion</string>
+    <string name="mediaPoblacional">media poblacional</string>
+    <string name="desviacionesPoblacionales">desviaciones poblacionales</string>
     <string name="desviacion">desviacion</string>
     <string name="title_activity_estadistica_menu">EstadisticaMenu</string>
     <string name="funEst">Todas las funciones de probabilidad y estadistica</string>
     <string name="title_activity_grafica_normal">GraficaNormal</string>
     <string name="title_activity_menu_estadistica_basica">MenuEstadisticaBasica</string>
+    <string name="errorEstandar">Error Estandar</string>
     <string name="Lineal">Distribucion Lineal</string>
+    <string name="Normal">Distribucion Normal</string>
     <string name="Binomial">Distribución Binomial</string>
     <string name="Multinomial">Distribución Multinomial</string>
     <string name="Hipergeometrica ">Distribución Hipergeometrica</string>
@@ -43,5 +51,10 @@
     <string name="title_activity_lineal">Lineal</string>
     <string name="title_activity_normal">Normal</string>
     <string name="title_activity_error_estadndar">ErrorEstadndar</string>
+    <string name="title_activity_menu_estadistica_inferencial">Estadistica Inferencial</string>
+    <string name="title_activity_estimacion_de_la_media">EstimacionDeLaMedia</string>
+    <string name="title_activity_regresion_lineal">Regresion Lineal</string>
+    <string name="title_activity_intervalos">Intervalos</string>
+    <string name="title_activity_prueba_hipotesis">PruebaHipotesis</string>
 
 </resources>

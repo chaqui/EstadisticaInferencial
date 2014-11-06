@@ -70,6 +70,26 @@
             android:name="com.chaqui.estadisticainferencial.ErrorEstadndar"
             android:label="@string/title_activity_error_estadndar" >
         </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.MenuEstadisticaInferencial"
+            android:label="@string/title_activity_menu_estadistica_inferencial" >
+        </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.EstimacionDeLaMedia"
+            android:label="@string/title_activity_estimacion_de_la_media" >
+        </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.RegresionLineal"
+            android:label="@string/title_activity_regresion_lineal" >
+        </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.Intervalos"
+            android:label="@string/title_activity_intervalos" >
+        </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.PruebaHipotesis"
+            android:label="@string/title_activity_prueba_hipotesis" >
+        </activity>
     </application>
 
 </manifest>

@@ -61,7 +61,7 @@ public double estandatizarMediaMuestra(double x, double media, double desviacion
 	return estandatizarMediaMuestra(x,media,this.calcularErrorEstandar(desviacionEstandar, n, N));
 }
 
-public double[] calcularIntervalos(double media, double z,double desviacionEstandar, double N, double n){
+public double[] calcularIntervalos(double media, double z,double desviacionEstandar, double n, double N){
 	double[] retorno = new double[2];
 	retorno[0]= media+(z*this.calcularErrorEstandar(desviacionEstandar, N, n));
 	retorno[1]=media-(z*this.calcularErrorEstandar(desviacionEstandar, N, n));
@@ -124,7 +124,9 @@ public double pruebaDeHipotesisUnaColasEstandarizadaDerecha(double mediaH0, doub
 	}
 		
 }
-
+public double usarMultiplicacion(double n, double N){
+	return n/N;
+}
 public double pruebaDeHipotesisUnaColasEstandarizada(double mediaH0, double desviacionEstandar, double valorCorrector, double nivelSignificancia, double cola, String lado){
 	if (lado=="menor que") {
 		return this.pruebaDeHipotesisUnaColasEstandarizadaIzquierda(mediaH0, desviacionEstandar, valorCorrector, nivelSignificancia);
