@@ -39,7 +39,9 @@ public class Intervalos extends Activity {
 				double doubleZ = Double.parseDouble(z.getText().toString());
 				double doubledesviacion = Double.parseDouble(desviacion.getText().toString());
 				double doublemuestra = Double.parseDouble(muestra.getText().toString());
-				resultado.setText(String.valueOf(estadistica.calcularIntervalos(doubleMedia, doubleZ, doubledesviacion, doublemuestra)));
+				double[] dResultado=estadistica.calcularIntervalos(doubleMedia, doubleZ, doubledesviacion, doublemuestra);
+				String cadenaResultante= "("+String.valueOf(dResultado[0])+","+String.valueOf(dResultado[1])+")";
+				resultado.setText(cadenaResultante);
 			}
 		});
 	}

@@ -56,5 +56,8 @@
     <string name="title_activity_regresion_lineal">Regresion Lineal</string>
     <string name="title_activity_intervalos">Intervalos</string>
     <string name="title_activity_prueba_hipotesis">PruebaHipotesis</string>
+    <string name="title_activity_estimacion_por_proporcion">EstimacionPorProporcion</string>
+    <string name="title_activity_estadistica_descriptiva">EstadisticaDescriptiva</string>
+    <string name="title_activity_calculadora">Calculadora</string>
 
 </resources>

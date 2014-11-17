@@ -2,38 +2,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PruebaHipotesis" >
+    tools:context=".EstimacionPorProporcion" >
 
     <LinearLayout
-        android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="47dp"
+        android:layout_marginTop="24dp"
         android:orientation="vertical" >
 
         <LinearLayout
-            android:layout_width="316dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="H0:"
+                android:text="P:"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <Spinner
-                android:id="@+id/spinner1"
-                android:layout_width="118dp"
-                android:layout_height="wrap_content" 
-                />
-
             <EditText
-                android:id="@+id/hipNula"
-                android:layout_width="164dp"
+                android:id="@+id/textP"
+                android:layout_width="162dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
                 android:inputType="numberDecimal" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -41,18 +37,17 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="media de la Muestra"
+                android:text="p:"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
-                android:id="@+id/medMuestra"
+                android:id="@+id/textp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:ems="10"
                 android:inputType="numberDecimal" >
 
                 <requestFocus />
@@ -68,42 +63,40 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nivel de Significancia"
+                android:text="n"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <EditText
-                android:id="@+id/NivelSIgnificancia"
+                android:id="@+id/txtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:ems="10"
+                android:inputType="numberSigned" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="N:"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <EditText
+                android:id="@+id/TextN"
+                android:layout_width="250px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:inputType="numberDecimal" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:id="@+id/desviacion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="desviacion"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <EditText
-                android:id="@+id/txtDesviacion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
             <Button

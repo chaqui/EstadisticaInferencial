@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.chaqui.calculos.EstadisticaInferencial;
 
@@ -14,7 +15,7 @@ public class ErrorEstadndar extends Activity {
 	private EditText desviacion;
 	private EditText n;
 	private EditText N;
-	private EditText resultado;
+	private TextView resultado;
 	private Button boton;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,20 +25,20 @@ public class ErrorEstadndar extends Activity {
 		n = (EditText) this.findViewById(R.id.txtn);
 		N = (EditText) this.findViewById(R.id.txtN);
 		boton =(Button) this.findViewById(R.id.btAceptar);
-		resultado = (EditText) this.findViewById(R.id.txtResultado);
+		resultado = (TextView) this.findViewById(R.id.txtResultado);
 		boton.setOnClickListener(new OnClickListener() {
-			
+				
 			@Override
 			public void onClick(View v) {
 				EstadisticaInferencial inferencial  = new EstadisticaInferencial();
-				if (n.getText().toString()=="" && N.getText().toString()=="") {
+				if (n.getText().toString()=="" || N.getText().toString()=="") {
 					MessageBox("Porfavor ingrese la muestra y/o la poblacion");
 				}
 				else{
-					if(n.getText().toString()!=""){
+					if(!n.getText().toString().equals("")){
 						double nDoble = Double.valueOf(n.getText().toString());
-						if (N.getText().toString()!="") {
-							double NDoble =Double.valueOf(n.getText().toString());
+						if (!N.getText().toString().equals("") ) {
+							double NDoble =Double.valueOf(N.getText().toString());
 							double desDoble = Double.valueOf(desviacion.getText().toString());
 							double res =inferencial.calcularErrorEstandar(desDoble, nDoble, NDoble);
 							resultado.setText(String.valueOf(res));

@@ -90,6 +90,18 @@
             android:name="com.chaqui.estadisticainferencial.PruebaHipotesis"
             android:label="@string/title_activity_prueba_hipotesis" >
         </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.EstimacionPorProporcion"
+            android:label="@string/title_activity_estimacion_por_proporcion" >
+        </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.EstadisticaDescriptiva"
+            android:label="@string/title_activity_estadistica_descriptiva" >
+        </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.Calculadora"
+            android:label="@string/title_activity_calculadora" >
+        </activity>
     </application>
 
 </manifest>

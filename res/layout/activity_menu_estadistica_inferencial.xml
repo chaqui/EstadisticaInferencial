@@ -14,24 +14,50 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/estMedia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/estimeacionMedia"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/distNormal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Normal"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/errorEstanda"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/errorEstandar"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </LinearLayout>
+
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/EstProp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Estimacion de la media de la proporcion"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/Intervalos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/estimeacionMedia"
+            android:text="Intervalos"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/PHipotesis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prueba de Hipotesis"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
     </LinearLayout>

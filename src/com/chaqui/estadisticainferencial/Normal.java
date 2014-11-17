@@ -9,12 +9,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class Normal extends Activity {
 	private EditText txtMediaNorma;
 	private EditText txtDesviacion;
 	private EditText txtx;
-	private EditText txtResultado;
+	private TextView txtResultado;
 	private Button button1;
 	
 	@Override
@@ -24,7 +25,7 @@ public class Normal extends Activity {
 		txtMediaNorma = (EditText) this.findViewById(R.id.txtMediaNorma);
 		txtDesviacion = (EditText) this.findViewById(R.id.txtDesviacion);
 		txtx = (EditText) this.findViewById(R.id.txtx);
-		txtResultado = (EditText) this.findViewById(R.id.txtResultado);
+		txtResultado = (TextView) this.findViewById(R.id.textRes);
 		button1 = (Button) this.findViewById(R.id.button1);
 		button1.setOnClickListener(new OnClickListener() {
 			
@@ -35,8 +36,8 @@ public class Normal extends Activity {
 				double x = Double.valueOf(txtx.getText().toString());
 				EstadisticaInferencial fn = new EstadisticaInferencial();
 				TablaZ tabla = new TablaZ();
-				double resultado=tabla.hallarArea(fn.estandatizarMediaMuestra(x, media, desviacion));
-				txtResultado.setText(String.valueOf(resultado));
+				double resultado=fn.estandatizarMediaMuestra(x, media, desviacion);
+				txtResultado.setText(String.valueOf(tabla.hallarArea(resultado)));
 			}
 		});
 	}

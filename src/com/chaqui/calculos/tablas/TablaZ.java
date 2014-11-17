@@ -309,7 +309,8 @@ public class TablaZ {
 		tablaZ[308]=tablaZ[309]=0.4990;
 	}
 	public double hallarArea(double z){
-		return this.tablaZ[(int)z*100];
+		int id= (int) (z*100);
+		return this.tablaZ[id];
 	}
 	public double hallarZ(double area){
 		for (int i = 0; i < tablaZ.length; i++) {

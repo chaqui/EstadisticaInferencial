@@ -1,6 +1,8 @@
 package com.chaqui.calculos;
+
+import com.chaqui.calculos.tablas.TablaZ;
 public class EstadisticaInferencial {
-	
+	TablaZ tablaz = new TablaZ();
 	
 public double calcularMedia(double[] datos){
 	
@@ -18,7 +20,7 @@ public double calcularMedia(double[] datos){
 ///////////////////Errores Estandar////////////////////////////
 //Calcular el error estandar cuando no se conoce la poblacion
 public double calcularErrorEstandar(double desviacionEstandar, double n){
-	
+	System.out.println(String.valueOf(Math.sqrt(n)));
 	return desviacionEstandar/(Math.sqrt(n));
 	
 }
@@ -27,7 +29,7 @@ public double calcularErrorEstandar(double desviacionEstandar, double n){
 //Calculo del error estandar conociendo la poblacion
 public double calcularErrorEstandar(double desviacionEstandar, double n, double N){
 	
-	if(n/N < 0.05 ){
+	if(n/N < 0.05 ){	
 		return calcularErrorEstandar(desviacionEstandar, n);
 	}
 	
@@ -78,11 +80,11 @@ public double distribucionT(double intervaloDeConfianza, double n){
 	return 0;
 }
 public double nivelDeSignificanciaEnLaNormal(double nivelSignificancia ){
-	return nivelSignificancia/2;
+	return tablaz.hallarZ(nivelSignificancia);
 }
 public double pruebaDeHipotesisDosColasEstandarizada(double mediaH0, double desviacionEstandar, double valorCorrector, double nivelSignificancia){
 	double estandarizacion= this.estandatizarMediaMuestra(valorCorrector, mediaH0, desviacionEstandar);
-	double z = nivelDeSignificanciaEnLaNormal(nivelSignificancia);
+	double z = nivelDeSignificanciaEnLaNormal(nivelSignificancia/2);
 	if (estandarizacion < z || z < estandarizacion   ) {
 		return 1;
 	}
@@ -144,11 +146,29 @@ public double pruebaDeHipotesisDosColasEstandarizadaProp(double pH0, double n, d
 	return this.pruebaDeHipotesisDosColasEstandarizada(pH0, this.calculoDelErrorEstandarDeLaProporcion(pH0, 1-pH0, n), valorCorrector, nivelSignificancia);
 }
 //Funciones Auxiliares ////
-
+public double estandatizarMediaMuestraProporcion(double p, double P, double n, double N ){
+	double errorEstandar=calculoDelErrorEstandarDeLaProporcion(p,1-p,n,N);
+	return this.estandatizarMediaMuestra(p, P, errorEstandar);
+	
+}
+public double estandatizarMediaMuestraProporcion(double p, double P, double n ){
+	double errorEstandar=calculoDelErrorEstandarDeLaProporcion(p,1-p,n);
+	return this.estandatizarMediaMuestra(p, P, errorEstandar);
+	
+}
+private double calculoDelErrorEstandarDeLaProporcion(double p, double q, double n, double N) {
+	if(n/N < 0.05 ){
+		return Math.sqrt((p*q)/n);
+	}
+	return  Math.sqrt((p*q)/n)*this.calcularMultiplicador(n, N);
+}
 //Calculo del error estandar 
 private double calcularMultiplicador(double n, double N){
-	
-	return Math.sqrt((N-n)/(N-1)); //sqrt((N-n)/(N-1))
+	double dividendo=N-n;
+	double divisor= N-1;
+	double division = dividendo/divisor;
+	//return Math.sqrt(division); //sqrt((N-n)/(N-1))
+	return division;
 }
 
 }

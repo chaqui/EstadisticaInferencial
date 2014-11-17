@@ -4,7 +4,12 @@ public class RegresionLinealCalculos {
 	public String calcularRegresion(double[] x, double[] y){
 		double b= (sumatoriaMultiplicarXY( x,y)-this.nPorMediaXPorMediaY(x, y))/(this.sumatoriaXCuadrado(x)-this.mediaXalCuadradoPorN(x));
 		double a= this.mediaY(y)-(b*this.mediaX(x));
+		if(a!=0){
 		return String.valueOf(a)+"x+"+String.valueOf(b);
+		}
+		else{
+			return "x+"+String.valueOf(b);
+		}
 	}
 	public double calcularDeterminacion(double a, double b, double[] x, double[] y){
 		double dividendo = (a*this.sumatoriaYCuadrado(y))+(b*this.sumatoriaMultiplicarXY(x, y)-this.mediaYalCuadradoPorN(y));
@@ -18,18 +23,33 @@ public class RegresionLinealCalculos {
 		String[] resultado = new String[2];
 		String resultadoReg= this.calcularRegresion(x, y);
 		String a;
+		int ban=0;
 		String b=a="";
 		for (int i = 0; i < resultadoReg.length(); i++) {
 			if ( resultadoReg.charAt(i) == 'x') {
 				for (int j = 0; j < i; j++) {
 					a=a+resultadoReg.charAt(j);
-				}	
+				}
 				i=i+2;
+				ban=1;
 			}
+				if(ban!=0){
 				b=b+resultadoReg.charAt(i);
+				}
 			
 		}
-		String resCorrelacion = String.valueOf(calcularCorrelacion(Double.valueOf(a),Double.valueOf(b),x,y));
+		double calCor;
+		if(a==""){
+			calCor=calcularCorrelacion(Double.valueOf(0),Double.valueOf(b),x,y);
+		}else{
+			if(b==""){
+			calCor=calcularCorrelacion(Double.valueOf(a),Double.valueOf(0),x,y);
+			}
+			else{
+				calCor=calcularCorrelacion(Double.valueOf(a),Double.valueOf(b),x,y);
+			}
+		}
+		String resCorrelacion = String.valueOf(calCor);
 		resultado[0]=resultadoReg;
 		resultado[1]=resCorrelacion;
 		return resultado;

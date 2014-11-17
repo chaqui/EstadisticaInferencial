@@ -2,78 +2,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegresionLineal" >
+    tools:context=".EstadisticaDescriptiva" >
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
         android:orientation="vertical" >
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="273dp"
             android:layout_height="wrap_content" >
 
             <TextView
                 android:id="@+id/textView1"
-                android:layout_width="wrap_content"
+                android:layout_width="302dp"
                 android:layout_height="wrap_content"
-                android:text="@string/x"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:text="Ingresando los resultados de sus encuestas se puede calcular la media, la moda y la desviacion"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent" >
-
-                <EditText
-                    android:id="@+id/x"
-                    android:layout_width="250px"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/txContenido"
+                android:layout_width="wrap_content"
+                android:layout_height="84dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="y:"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:text="ejemplo(a,b,c,d)"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
 
-            <EditText
-                android:id="@+id/y"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/btAceptar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/aceptar" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/vacio"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
 
             <TextView
                 android:id="@+id/resultado"
@@ -81,7 +74,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/resultado"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
+
         </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

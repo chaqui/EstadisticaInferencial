@@ -39,8 +39,8 @@ public class EstimacionDeLaMedia extends Activity {
 			
 			@Override
 			public void onClick(View arg0) {
-				if(txtmuestra.getText().toString()==""  ||
-						txtMediaMuestral.getText().toString()=="" || txtMediaPoblacional.getText().toString()=="" || txtDesvMuestral.getText().toString()=="" ){
+				if(txtmuestra.getText().toString().equals("")  ||
+						txtMediaMuestral.getText().equals("") || txtMediaPoblacional.getText().equals("") || txtDesvMuestral.getText().toString().equals("") ){
 					MessageBox("Porfavor ingrese los valores");
 				}
 				else{
@@ -48,7 +48,7 @@ public class EstimacionDeLaMedia extends Activity {
 					double dbMediaMuestral = Double.valueOf(txtMediaMuestral.getText().toString());
 					double dbMediaPoblacional = Double.valueOf(txtMediaPoblacional.getText().toString());
 					double dbDesvMuestral = Double.valueOf(txtmuestra.getText().toString());
-					if (txtpoblacion.getText().toString()!="") {
+					if (!txtpoblacion.getText().toString().equals("")) {
 						double dbPoblacion = Double.valueOf(txtpoblacion.getText().toString());
 								
 						double resultado = estadistica.estandatizarMediaMuestra(dbMediaMuestral, dbMediaPoblacional, dbDesvMuestral, dbMuestra, dbPoblacion);
