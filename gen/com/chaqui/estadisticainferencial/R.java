@@ -87,16 +87,17 @@ public final class R {
         public static final int linearLayout1=0x7f090039;
         public static final int mePoblacion=0x7f09002d;
         public static final int medMuestra=0x7f09002c;
-        public static final int menu_settings=0x7f09005c;
+        public static final int menu_settings=0x7f09005d;
         public static final int muestra=0x7f09002f;
         public static final int mySimpleXYPlot=0x7f090038;
-        public static final int opcion1=0x7f09005d;
-        public static final int opcion2=0x7f09005e;
-        public static final int opcion3=0x7f09005f;
+        public static final int opcion1=0x7f09005e;
+        public static final int opcion2=0x7f09005f;
+        public static final int opcion3=0x7f090060;
         public static final int poblacion=0x7f090031;
         public static final int respuesta=0x7f090037;
         public static final int resultado=0x7f09002b;
         public static final int spinner1=0x7f090057;
+        public static final int textN=0x7f09005a;
         public static final int textP=0x7f090034;
         public static final int textRes=0x7f090055;
         public static final int textView1=0x7f090000;
@@ -115,8 +116,8 @@ public final class R {
         public static final int txtViewNumero=0x7f09000d;
         public static final int txtn=0x7f090028;
         public static final int txtx=0x7f090054;
-        public static final int x=0x7f09005a;
-        public static final int y=0x7f09005b;
+        public static final int x=0x7f09005b;
+        public static final int y=0x7f09005c;
         public static final int z=0x7f090046;
     }
     public static final class layout {

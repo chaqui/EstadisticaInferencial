@@ -44,13 +44,13 @@ public class EstimacionPorProporcion extends Activity {
 					double p = Double.parseDouble(textp.getText().toString());
 					double n = Double.parseDouble(txtn.getText().toString());
 					
-					if (TextN.getText().toString()=="") {
-						double res=inferencial.estandatizarMediaMuestraProporcion(P, p, n);
+					if (TextN.getText().toString().equals("")) {
+						double res=inferencial.estandatizarMediaMuestraProporcion(p, P, n);
 						respuesta.setText(String.valueOf(tabla.hallarArea(res)));
 					}
 					else{
 						double N = Double.parseDouble(TextN.getText().toString());
-						double res=inferencial.estandatizarMediaMuestraProporcion(P, p, n,N);
+						double res=inferencial.estandatizarMediaMuestraProporcion(p, P, n,N);
 						respuesta.setText(String.valueOf(tabla.hallarArea(res)));
 					}
 				}

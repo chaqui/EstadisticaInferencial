@@ -52,11 +52,11 @@ public class EstimacionDeLaMedia extends Activity {
 						double dbPoblacion = Double.valueOf(txtpoblacion.getText().toString());
 								
 						double resultado = estadistica.estandatizarMediaMuestra(dbMediaMuestral, dbMediaPoblacional, dbDesvMuestral, dbMuestra, dbPoblacion);
-						lbResultado.setText(String.valueOf(tabla.hallarZ(resultado)));
+						lbResultado.setText(String.valueOf(tabla.hallarArea(resultado)));
 					}
 					else{
 						double resultado = estadistica.estandatizarMediaMuestra(dbMediaMuestral, dbMediaPoblacional, dbDesvMuestral, dbMuestra);
-						lbResultado.setText(String.valueOf(tabla.hallarZ(resultado)));
+						lbResultado.setText(String.valueOf(tabla.hallarArea(resultado)));
 					}
 				}
 			}

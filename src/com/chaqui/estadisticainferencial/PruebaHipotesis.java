@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chaqui.calculos.EstadisticaInferencial;
 
@@ -22,6 +23,8 @@ public class PruebaHipotesis extends Activity {
 	private EditText medMuestra;
 	private EditText significanciatxt;
 	private EditText txDesviacion;
+	private EditText txtn;
+	private EditText textN;
 	private TextView respuesta;
 	private Button aceptar;
 	@Override
@@ -34,6 +37,8 @@ public class PruebaHipotesis extends Activity {
 		txDesviacion = (EditText) findViewById(R.id.txtDesviacion);
 		respuesta = (TextView) findViewById(R.id.respuesta);
 		sp = (Spinner) findViewById(R.id.spinner1);
+		txtn = (EditText) findViewById(R.id.txtn);
+		textN = (EditText) findViewById(R.id.textN);
 		ArrayAdapter array= ArrayAdapter.createFromResource(this, R.array.hipo, android.R.layout.simple_spinner_item);
 		array.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		sp.setAdapter(array);
@@ -58,29 +63,63 @@ public class PruebaHipotesis extends Activity {
 			
 			@Override
 			public void onClick(View arg0) {
-				double hipotesis= Double.valueOf(hipNula.getText().toString());
-				double real= Double.valueOf(medMuestra.getText().toString());
-				double significancia= Double.valueOf(significanciatxt.getText().toString());
-				double desviacionEstandar= Double.valueOf(txDesviacion.getText().toString());
-				double res=0;
-				EstadisticaInferencial estadistica = new EstadisticaInferencial();
-				if (tipoDeHipo=="=") {
-					res=estadistica.pruebaDeHipotesisDosColasEstandarizada(hipotesis, desviacionEstandar, real, significancia);
+				try {
+					if (hipNula.getText().toString().equals("") || medMuestra.getText().toString().equals("") || 
+							significanciatxt.getText().toString().equals("") || txDesviacion.getText().toString().equals("")
+							|| txtn.getText().toString().equals("")) {
+							MessageBox("faltan datos");
+					}
+					else {
+						double hipotesis= Double.valueOf(hipNula.getText().toString());
+						double real= Double.valueOf(medMuestra.getText().toString());
+						double significancia= Double.valueOf(significanciatxt.getText().toString());
+						double desviacionEstandar= Double.valueOf(txDesviacion.getText().toString());
+						double res=0;
+						double n=  Double.valueOf(txtn.getText().toString());
+						EstadisticaInferencial estadistica = new EstadisticaInferencial();
+						if (textN.getText().toString().equals("")) {
+							if (tipoDeHipo.equals("=")) {
+								res=estadistica.pruebaDeHipotesisDosColasEstandarizada(hipotesis, desviacionEstandar, real, significancia, n, 0);
+							
+							}
+							else if (tipoDeHipo.equals("menor que")) {
+								res= estadistica.pruebaDeHipotesisUnaColasEstandarizadaIzquierda(hipotesis, desviacionEstandar, real, significancia, n, 0);
+								
+							}
+							else if (tipoDeHipo.equals("mayor que")) {
+								res= estadistica.pruebaDeHipotesisUnaColasEstandarizadaDerecha(hipotesis, desviacionEstandar, real, significancia, n, 0);
+							}
+							respuesta.setText(String.valueOf(res));
+						}
+						else{
+							double N=  Double.valueOf(textN.getText().toString());
+							if (tipoDeHipo.equals("=")) {
+								res=estadistica.pruebaDeHipotesisDosColasEstandarizada(hipotesis, desviacionEstandar, real, significancia, n, N);
+							
+							}
+							else if (tipoDeHipo.equals("menor que")) {
+								res= estadistica.pruebaDeHipotesisUnaColasEstandarizadaIzquierda(hipotesis, desviacionEstandar, real, significancia, n, N);
+								
+							}
+							else if (tipoDeHipo.equals("mayor que")) {
+								res= estadistica.pruebaDeHipotesisUnaColasEstandarizadaDerecha(hipotesis, desviacionEstandar, real, significancia, n, N);
+							}
+							respuesta.setText(String.valueOf(res));
+						}
+						
+					}
 					
+					//if (res==1) {
+					//respuesta.setText("aceptada");
+					//}
+					//else{
+						//respuesta.setText("rechazada");
+					//}
+				} catch (Exception e) {
+					// TODO: handle exception
+					MessageBox("algo salio mal :(");
 				}
-				else if (tipoDeHipo=="menor que ") {
-					res= estadistica.pruebaDeHipotesisUnaColasEstandarizadaIzquierda(hipotesis, desviacionEstandar, real, significancia);
-			
-				}
-				else if (tipoDeHipo=="mayor que") {
-					res= estadistica.pruebaDeHipotesisUnaColasEstandarizadaDerecha(hipotesis, desviacionEstandar, real, significancia);
-				}
-				if (res==0) {
-					respuesta.setText("aceptada");
-				}
-				else{
-					respuesta.setText("rechazada");
-				}
+				
 				
 			}
 		});
@@ -91,6 +130,9 @@ public class PruebaHipotesis extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_prueba_hipotesis, menu);
 		return true;
+	}
+	private void MessageBox(String message) {
+		Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
 	}
 
 }

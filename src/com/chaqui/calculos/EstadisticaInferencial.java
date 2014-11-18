@@ -80,18 +80,34 @@ public double distribucionT(double intervaloDeConfianza, double n){
 	return 0;
 }
 public double nivelDeSignificanciaEnLaNormal(double nivelSignificancia ){
+	if(100<nivelSignificancia*100){
+		nivelSignificancia=nivelSignificancia/100;
+	}
 	return tablaz.hallarZ(nivelSignificancia);
 }
-public double pruebaDeHipotesisDosColasEstandarizada(double mediaH0, double desviacionEstandar, double valorCorrector, double nivelSignificancia){
-	double estandarizacion= this.estandatizarMediaMuestra(valorCorrector, mediaH0, desviacionEstandar);
+public double pruebaDeHipotesisDosColasEstandarizada(double mediaH0, double desviacionEstandar, double valorCorrector, double nivelSignificancia, double n, double N){
+	double estandarizacion;
+	if (N==0) {
+		estandarizacion= this.estandatizarMediaMuestra(mediaH0, valorCorrector, desviacionEstandar,n);
+	}
+	else{
+		estandarizacion= this.estandatizarMediaMuestra(mediaH0, valorCorrector, desviacionEstandar,n,N);
+	}
+
 	double z = nivelDeSignificanciaEnLaNormal(nivelSignificancia/2);
-	if (estandarizacion < z || z < estandarizacion   ) {
-		return 1;
+	if (z*-1 < estandarizacion || estandarizacion < z   ) {
+		return z;
 	}
 	return 0;	
 }
-public double pruebaDeHipotesisUnaColasEstandarizadaIzquierda(double mediaH0, double desviacionEstandar, double valorCorrector, double nivelSignificancia){
-	double estandarizacion= this.estandatizarMediaMuestra(valorCorrector, mediaH0, desviacionEstandar);
+public double pruebaDeHipotesisUnaColasEstandarizadaIzquierda(double mediaH0, double desviacionEstandar, double valorCorrector, double nivelSignificancia, double n, double N){
+	double estandarizacion;
+	if (N==0) {
+		estandarizacion= this.estandatizarMediaMuestra(mediaH0, valorCorrector, desviacionEstandar,n);
+	}
+	else{
+		estandarizacion= this.estandatizarMediaMuestra(mediaH0, valorCorrector, desviacionEstandar,n,N);
+	}
 	if (nivelSignificancia < 0.5) {
 		double z = nivelDeSignificanciaEnLaNormal(0.5-nivelSignificancia);
 		if (z < estandarizacion   ) {
@@ -108,8 +124,14 @@ public double pruebaDeHipotesisUnaColasEstandarizadaIzquierda(double mediaH0, do
 	}
 		
 }
-public double pruebaDeHipotesisUnaColasEstandarizadaDerecha(double mediaH0, double desviacionEstandar, double valorCorrector, double nivelSignificancia){
-	double estandarizacion= this.estandatizarMediaMuestra(valorCorrector, mediaH0, desviacionEstandar);
+public double pruebaDeHipotesisUnaColasEstandarizadaDerecha(double mediaH0, double desviacionEstandar, double valorCorrector, double nivelSignificancia, double n, double N){
+	double estandarizacion;
+	if (N==0) {
+		estandarizacion= this.estandatizarMediaMuestra(mediaH0, valorCorrector, desviacionEstandar,n);
+	}
+	else{
+		estandarizacion= this.estandatizarMediaMuestra(mediaH0, valorCorrector, desviacionEstandar,n,N);
+	}
 	if (0.5 < nivelSignificancia ) {
 		double z = nivelDeSignificanciaEnLaNormal(0.5-nivelSignificancia);
 		if (   z < estandarizacion) {
@@ -129,21 +151,23 @@ public double pruebaDeHipotesisUnaColasEstandarizadaDerecha(double mediaH0, doub
 public double usarMultiplicacion(double n, double N){
 	return n/N;
 }
-public double pruebaDeHipotesisUnaColasEstandarizada(double mediaH0, double desviacionEstandar, double valorCorrector, double nivelSignificancia, double cola, String lado){
+public double pruebaDeHipotesisUnaColasEstandarizada(double mediaH0, double desviacionEstandar, double valorCorrector, double nivelSignificancia, double cola, String lado, double n, double N){
 	if (lado=="menor que") {
-		return this.pruebaDeHipotesisUnaColasEstandarizadaIzquierda(mediaH0, desviacionEstandar, valorCorrector, nivelSignificancia);
+		
+		
+		return this.pruebaDeHipotesisUnaColasEstandarizadaIzquierda(mediaH0, desviacionEstandar, valorCorrector, nivelSignificancia,n,N);
 	}
-	return this.pruebaDeHipotesisUnaColasEstandarizadaDerecha(mediaH0, desviacionEstandar, valorCorrector, nivelSignificancia);
+	return this.pruebaDeHipotesisUnaColasEstandarizadaDerecha(mediaH0, desviacionEstandar, valorCorrector, nivelSignificancia,n,N);
 }
 
 public double pruebaDeHipotesisUnaColasEstandarizadaProporcion(double pH0, double valorCorrector, double nivelSignificancia, double cola, String lado, double n){
 	if (lado=="menor que") {
-		return this.pruebaDeHipotesisUnaColasEstandarizadaIzquierda(pH0, this.calculoDelErrorEstandarDeLaProporcion(pH0, 1-pH0, n), valorCorrector, nivelSignificancia);
+		return this.pruebaDeHipotesisUnaColasEstandarizadaIzquierda(pH0, this.calculoDelErrorEstandarDeLaProporcion(pH0, 1-pH0, n), valorCorrector, nivelSignificancia,n,0);
 	}
-	return this.pruebaDeHipotesisUnaColasEstandarizadaDerecha(pH0, this.calculoDelErrorEstandarDeLaProporcion(pH0, 1-pH0, n), valorCorrector, nivelSignificancia);
+	return this.pruebaDeHipotesisUnaColasEstandarizadaDerecha(pH0, this.calculoDelErrorEstandarDeLaProporcion(pH0, 1-pH0, n), valorCorrector, nivelSignificancia,n,0);
 }
-public double pruebaDeHipotesisDosColasEstandarizadaProp(double pH0, double n, double valorCorrector, double nivelSignificancia){
-	return this.pruebaDeHipotesisDosColasEstandarizada(pH0, this.calculoDelErrorEstandarDeLaProporcion(pH0, 1-pH0, n), valorCorrector, nivelSignificancia);
+public double pruebaDeHipotesisDosColasEstandarizadaProp(double pH0, double n, double valorCorrector, double nivelSignificancia,   double N){
+	return this.pruebaDeHipotesisDosColasEstandarizada(pH0, this.calculoDelErrorEstandarDeLaProporcion(pH0, 1-pH0, n), valorCorrector, nivelSignificancia,n,N);
 }
 //Funciones Auxiliares ////
 public double estandatizarMediaMuestraProporcion(double p, double P, double n, double N ){

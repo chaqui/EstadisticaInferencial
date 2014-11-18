@@ -310,11 +310,17 @@ public class TablaZ {
 	}
 	public double hallarArea(double z){
 		int id= (int) (z*100);
+	if(id>0){
 		return this.tablaZ[id];
+	}
+	else{
+		id=id*-1;
+		return this.tablaZ[id]*-1;
+	}
 	}
 	public double hallarZ(double area){
 		for (int i = 0; i < tablaZ.length; i++) {
-			if(area > tablaZ[i]){
+			if(area < tablaZ[i]){
 				return tablaZ[i-1];
 			}
 		}
