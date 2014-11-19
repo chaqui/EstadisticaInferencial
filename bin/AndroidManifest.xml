@@ -102,6 +102,10 @@
             android:name="com.chaqui.estadisticainferencial.Calculadora"
             android:label="@string/title_activity_calculadora" >
         </activity>
+        <activity
+            android:name="com.chaqui.estadisticainferencial.Herramientas"
+            android:label="@string/title_activity_herramientas" >
+        </activity>
     </application>
 
 </manifest>

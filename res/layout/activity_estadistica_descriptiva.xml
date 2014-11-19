@@ -17,6 +17,7 @@
                 android:id="@+id/textView1"
                 android:layout_width="302dp"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/padding_medium"
                 android:text="Ingresando los resultados de sus encuestas se puede calcular la media, la moda y la desviacion"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -29,10 +30,10 @@
             <EditText
                 android:id="@+id/txContenido"
                 android:layout_width="wrap_content"
-                android:layout_height="84dp"
+                android:layout_height="77dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="numberDecimal" />
+                android:singleLine="false" />
 
         </LinearLayout>
 

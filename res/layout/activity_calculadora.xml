@@ -26,17 +26,18 @@
 
         <LinearLayout
             android:id="@+id/LLayout1"
-            android:layout_width="fill_parent"
+            android:layout_width="296dp"
             android:layout_height="290dp"
             android:layout_margin="@dimen/padding_large"
             android:layout_marginTop="@dimen/padding_large"
+            android:layout_weight="0.04"
             android:gravity="center_vertical"
             android:orientation="vertical"
             android:padding="@dimen/padding_large" >
 
             <LinearLayout
                 android:id="@+id/LinearLayout03"
-                android:layout_width="284dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="120dp"
                 android:orientation="horizontal"
@@ -80,7 +81,7 @@
 
             <LinearLayout
                 android:id="@+id/LinearLayout02"
-                android:layout_width="285dp"
+                android:layout_width="246dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="120dp"
                 android:orientation="horizontal"
@@ -124,7 +125,7 @@
 
             <LinearLayout
                 android:id="@+id/LayoutId"
-                android:layout_width="282dp"
+                android:layout_width="246dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
                 android:layout_marginRight="120dp"
@@ -169,7 +170,7 @@
 
             <LinearLayout
                 android:id="@+id/LinearLayout01"
-                android:layout_width="283dp"
+                android:layout_width="248dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="120dp"
                 android:orientation="horizontal"
@@ -208,10 +209,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="18.67"
-                    android:text="Pow" />
+                    android:text="Pow"
+                    android:textSize="@dimen/padding_small" />
+
             </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
 
 </RelativeLayout>

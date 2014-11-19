@@ -7,58 +7,78 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="23dp"
         android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/estMedia"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/estimeacionMedia"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:paddingLeft="@dimen/padding_medium" >
 
-        <TextView
-            android:id="@+id/distNormal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Normal"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            <TextView
+                android:id="@+id/PHipotesis"
+                android:layout_width="148dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_medium"
+                android:text="Prueba de Hipotesis"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TextView
-            android:id="@+id/errorEstanda"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/errorEstandar"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            <TextView
+                android:id="@+id/Intervalos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_medium"
+                android:text="Intervalos"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/EstProp"
+                android:layout_width="167dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_medium"
+                android:text="Estimacion de la media de la proporcion"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/errorEstanda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_medium"
+                android:text="@string/errorEstandar"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold|italic" />
+
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/EstProp"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Estimacion de la media de la proporcion"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:orientation="horizontal" >
 
-        <TextView
-            android:id="@+id/Intervalos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Intervalos"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            <TextView
+                android:id="@+id/distNormal"
+                android:layout_width="144dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_medium"
+                android:text="@string/Normal"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TextView
-            android:id="@+id/PHipotesis"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Prueba de Hipotesis"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            <TextView
+                android:id="@+id/estMedia"
+                android:layout_width="144dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_medium"
+                android:text="@string/estimeacionMedia"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
