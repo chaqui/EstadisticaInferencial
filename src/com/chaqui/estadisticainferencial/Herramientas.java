@@ -24,7 +24,7 @@ public class Herramientas extends Activity {
 				startActivity(con);
 			}
 		});
-		textView2 = (TextView) this.findViewById(R.id.textView1);
+		textView2 = (TextView) this.findViewById(R.id.textView2);
 		textView2.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v) {

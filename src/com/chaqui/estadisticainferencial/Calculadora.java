@@ -22,6 +22,7 @@ public class Calculadora extends Activity {
 	float totalr;
 	float base;
 	double total2;
+	private TextView numero = (TextView)findViewById(R.id.txtViewNumero);
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -69,26 +70,217 @@ public class Calculadora extends Activity {
       //Boton Igual
         View BotonIgual=findViewById(R.id.Btigual);
         //Conexiones con los botones
-        Boton0.setOnClickListener((OnClickListener) this);
-        Boton01.setOnClickListener((OnClickListener) this);
-        Boton02.setOnClickListener((OnClickListener) this);
-        Boton03.setOnClickListener((OnClickListener) this);
-        Boton04.setOnClickListener((OnClickListener) this);
-        Boton05.setOnClickListener((OnClickListener) this);
-        Boton06.setOnClickListener((OnClickListener) this);
-        Boton07.setOnClickListener((OnClickListener) this);
-        Boton08.setOnClickListener((OnClickListener) this);
-        Boton09.setOnClickListener((OnClickListener) this);
-        BotonMas.setOnClickListener((OnClickListener) this);
-        BotonMenos.setOnClickListener((OnClickListener) this);
-        BotonAC.setOnClickListener((OnClickListener) this);
-        BotonC.setOnClickListener((OnClickListener) this);
-        BotonPunto.setOnClickListener((OnClickListener) this);
-        BotonPow.setOnClickListener((OnClickListener) this);
-        BotonRaiz.setOnClickListener((OnClickListener) this);
-        BotonPor.setOnClickListener((OnClickListener) this);
-        BotonDivision.setOnClickListener((OnClickListener) this);
-        BotonIgual.setOnClickListener((OnClickListener) this);
+        Boton0.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				cargarnumero("0");	
+				
+			}
+		});
+        Boton01.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				cargarnumero("1");	
+				
+			}
+		});
+        Boton02.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				cargarnumero("2");	
+				
+			}
+		});
+        Boton03.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				cargarnumero("3");	
+				
+			}
+		});
+        Boton04.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				cargarnumero("4");	
+				
+			}
+		});
+        Boton05.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				cargarnumero("5");	
+				
+			}
+		});
+        Boton06.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				cargarnumero("6");	
+				
+			}
+		});
+        Boton07.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				cargarnumero("7");	
+				
+			}
+		});
+        Boton08.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				cargarnumero("8");	
+				
+			}
+		});
+        Boton09.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				cargarnumero("9");	
+				
+			}
+		});
+        BotonMas.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				float num12;
+				num12=Float.valueOf(numero.getText().toString());
+				totalr=operacion(num12);
+				numero.setText(String.valueOf(totalr));
+				suma=true;
+				bandera=true;
+			}
+		});
+        BotonMenos.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				float num12;
+				num12=Float.valueOf(numero.getText().toString());
+				totalr=operacion(num12);
+				numero.setText(String.valueOf(totalr));
+				resta=true;
+				bandera=true;
+			}
+		});
+        BotonAC.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				numero.setText(" ");
+				total=0;
+				totalr=0;
+			}
+		});
+        BotonC.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				num=numero.getText().toString();
+				int a=num.length();
+				a=a-1;
+			}
+		});
+        BotonPunto.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				cargarnumero(".");	
+				
+			}
+		});
+        BotonPow.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				float num12;
+				num12=Float.valueOf(numero.getText().toString());
+				totalr=operacion(num12);
+				numero.setText(String.valueOf(totalr));
+				elevacion=true;
+				bandera=true;
+			}
+		});
+        BotonRaiz.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				float num12;
+				num12=Float.valueOf(numero.getText().toString());
+				totalr=operacion(num12);
+				numero.setText(String.valueOf(totalr));
+				raiz=true;
+				bandera=true;
+			}
+		});
+        BotonPor.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				float num12;
+				num12=Float.valueOf(numero.getText().toString());
+				totalr=operacion(num12);
+				numero.setText(String.valueOf(totalr));
+				multiplicacion=true;
+				bandera=true;
+			}
+		});
+        BotonDivision.setOnClickListener( new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				float num12;
+				num12=Float.valueOf(numero.getText().toString());
+				totalr=operacion(num12);
+				numero.setText(String.valueOf(totalr));
+				division=true;
+				bandera=true;
+			}
+		});
+        BotonIgual.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				float num12;
+				num12=Float.valueOf(numero.getText().toString());
+				totalr=operacion(num12);
+				numero.setText(String.valueOf(totalr));
+				bandera=true;
+				total=0;
+				totalr=0;
+			}
+		});
     }
 
 	@Override
@@ -99,7 +291,7 @@ public class Calculadora extends Activity {
 	}
 	  public void cargarnumero(String numero1)
 	    {
-	    	TextView numero = (TextView)findViewById(R.id.txtViewNumero);
+	    	
 			
 			if (bandera==false)
 			{
@@ -114,121 +306,7 @@ public class Calculadora extends Activity {
 			}
 	    }
 	    
-		public void onClick(View v) 
-		{
-			TextView numero = (TextView)findViewById(R.id.txtViewNumero);
-			if(v.getId()==findViewById(R.id.BtAc).getId())
-			{
-				numero.setText(" ");
-				total=0;
-				totalr=0;
-			}
-			if(v.getId()==findViewById(R.id.Btigual).getId())
-			{
-				float num12;
-				num12=Float.valueOf(numero.getText().toString());
-				totalr=operacion(num12);
-				numero.setText(String.valueOf(totalr));
-				bandera=true;
-				total=0;
-				totalr=0;
-			}
-			if(v.getId()==findViewById(R.id.BtC).getId())
-			{
-				num=numero.getText().toString();
-				int a=num.length();
-				a=a-1;
-			}
-			if(v.getId()==findViewById(R.id.Bt0).getId()){
-					cargarnumero("0");			
-			}
-			if(v.getId()==findViewById(R.id.BtUno).getId()){
-					cargarnumero("1");
-				}	
-			if(v.getId()==findViewById(R.id.Bt2).getId()){
-					cargarnumero("2");
-					}	
-			if(v.getId()==findViewById(R.id.Bt03).getId())
-			{
-				cargarnumero("3");
-			}	
-						
-			if(v.getId()==findViewById(R.id.Bt4).getId()){
-				cargarnumero("4");
-			}			
-			if(v.getId()==findViewById(R.id.Bt5).getId()){
-				cargarnumero("5");
-			}			
-			if(v.getId()==findViewById(R.id.Bt6).getId()){
-				cargarnumero("6");
-			}	
-			if(v.getId()==findViewById(R.id.Bt7).getId()){
-				cargarnumero("7");
-			}
-			if(v.getId()==findViewById(R.id.Bt8).getId()){
-				cargarnumero("8");
-			}	
-			if(v.getId()==findViewById(R.id.Bt9).getId()){
-				cargarnumero("9");
-			}	
-			if(v.getId()==findViewById(R.id.BtPunto).getId()){
-				cargarnumero(".");
-			}
-			if(v.getId()==findViewById(R.id.IdMas).getId()){
-				float num12;
-				num12=Float.valueOf(numero.getText().toString());
-				totalr=operacion(num12);
-				numero.setText(String.valueOf(totalr));
-				suma=true;
-				bandera=true;
-			}
-			if(v.getId()==findViewById(R.id.BtMenis).getId()){
-				float num12;
-				num12=Float.valueOf(numero.getText().toString());
-				totalr=operacion(num12);
-				numero.setText(String.valueOf(totalr));
-				resta=true;
-				bandera=true;
-			}
-			if(v.getId()==findViewById(R.id.BtPor).getId())
-			{
-				float num12;
-				num12=Float.valueOf(numero.getText().toString());
-				totalr=operacion(num12);
-				numero.setText(String.valueOf(totalr));
-				multiplicacion=true;
-				bandera=true;
-			}
-			if(v.getId()==findViewById(R.id.BtDivision).getId())
-			{
-				float num12;
-				num12=Float.valueOf(numero.getText().toString());
-				totalr=operacion(num12);
-				numero.setText(String.valueOf(totalr));
-				division=true;
-				bandera=true;
-			}
-			if(v.getId()==findViewById(R.id.BtPo).getId())
-			{
-				float num12;
-				num12=Float.valueOf(numero.getText().toString());
-				totalr=operacion(num12);
-				numero.setText(String.valueOf(totalr));
-				elevacion=true;
-				bandera=true;
-		}
-			if(v.getId()==findViewById(R.id.BtRaiz).getId())
-			{
-				float num12;
-				num12=Float.valueOf(numero.getText().toString());
-				totalr=operacion(num12);
-				numero.setText(String.valueOf(totalr));
-				raiz=true;
-				bandera=true;
-			}
-			
-			
-	}
+		
 		
 		public float operacion(float num)
 		{
